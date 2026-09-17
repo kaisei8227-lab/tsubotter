@@ -1,19 +1,38 @@
 package com.example.tsubotter.model;
 
+import java.util.HashMap;
 import java.util.Map;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.ElementCollection;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "posts")
 public class Post {
+
+    @Id
     private String id;
+
     private String authorId;
     private String nickname;
     private String dept;
     private String course;
+
+    @Column(length = 1000)
     private String text;
+
     private String visibility;
-    private Map<String, Boolean> likes;
+
+    @ElementCollection(fetch = FetchType.EAGER)
+    private Map<String, Boolean> likes = new HashMap<>();
+
     private long createdAt;
 
-    // デフォルトコンストラクタ
+    // JPA用のデフォルトコンストラクタ
     public Post() {}
 
     // コンストラクタ
@@ -25,7 +44,7 @@ public class Post {
         this.course = course;
         this.text = text;
         this.visibility = visibility;
-        this.likes = likes;
+        this.likes = likes != null ? likes : new HashMap<>();
         this.createdAt = createdAt;
     }
 
