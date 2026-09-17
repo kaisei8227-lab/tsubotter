@@ -1,10 +1,10 @@
 package com.example.tsubotter.controller;
 
-import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.CopyOnWriteArrayList;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -16,37 +16,37 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.tsubotter.model.Post;
+import com.example.tsubotter.repository.PostRepository;
 
 @RestController
 @RequestMapping("/api/posts")
-@CrossOrigin(origins = "*") // 端末間（CORS）通信を許可
+@CrossOrigin(origins = "*")
 public class PostController {
 
-    // スレッドセーフなリストを使用して投稿データをメモリ上に保持
-    private final List<Post> posts = new CopyOnWriteArrayList<>();
+    @Autowired
+    private PostRepository postRepository;
 
     // 1. 全投稿の取得 (GET /api/posts)
     @GetMapping
     public List<Post> getAllPosts() {
-        return posts;
+        return postRepository.findAll();
     }
 
     // 2. 新規投稿の追加 (POST /api/posts)
     @PostMapping
     public ResponseEntity<Post> createPost(@RequestBody Post newPost) {
         if (newPost.getLikes() == null) {
-            newPost.setLikes(Collections.emptyMap());
+            newPost.setLikes(new HashMap<>());
         }
-        // 最新の投稿がリストの先頭に来るように追加
-        posts.add(0, newPost);
-        return ResponseEntity.ok(newPost);
+        Post savedPost = postRepository.save(newPost);
+        return ResponseEntity.ok(savedPost);
     }
 
     // 3. 投稿の削除 (DELETE /api/posts/{id})
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deletePost(@PathVariable String id) {
-        boolean removed = posts.removeIf(post -> post.getId().equals(id));
-        if (removed) {
+        if (postRepository.existsById(id)) {
+            postRepository.deleteById(id);
             return ResponseEntity.ok().build();
         }
         return ResponseEntity.notFound().build();
@@ -60,25 +60,21 @@ public class PostController {
             return ResponseEntity.badRequest().build();
         }
 
-        for (Post post : posts) {
-            if (post.getId().equals(id)) {
-                Map<String, Boolean> likes = post.getLikes();
-                if (likes == null) {
-                    likes = new java.util.HashMap<>();
-                } else {
-                    likes = new java.util.HashMap<>(likes);
-                }
-
-                if (likes.containsKey(userId)) {
-                    likes.remove(userId);
-                } else {
-                    likes.put(userId, true);
-                }
-
-                post.setLikes(likes);
-                return ResponseEntity.ok(post);
+        return postRepository.findById(id).map(post -> {
+            Map<String, Boolean> likes = post.getLikes();
+            if (likes == null) {
+                likes = new HashMap<>();
             }
-        }
-        return ResponseEntity.notFound().build();
+
+            if (likes.containsKey(userId)) {
+                likes.remove(userId);
+            } else {
+                likes.put(userId, true);
+            }
+
+            post.setLikes(likes);
+            Post updatedPost = postRepository.save(post);
+            return ResponseEntity.ok(updatedPost);
+        }).orElse(ResponseEntity.notFound().build());
     }
 }
