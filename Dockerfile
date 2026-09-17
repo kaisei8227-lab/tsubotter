@@ -1,13 +1,16 @@
-# Javaの実行環境（Java 17 または 21 に合わせて調整可）
-FROM eclipse-temurin:17-jdk-alpine AS build
+# Java 21 の実行環境を使用
+FROM eclipse-temurin:21-jdk-alpine AS build
 WORKDIR /app
 
-# プロジェクトファイルをコピーしてビルド
+# プロジェクトファイルをコピー
 COPY . .
+
+# gradlew に実行権限を付与してビルド
+RUN chmod +x ./gradlew
 RUN ./gradlew build -x test
 
 # 実行環境
-FROM eclipse-temurin:17-jre-alpine
+FROM eclipse-temurin:21-jre-alpine
 WORKDIR /app
 COPY --from=build /app/build/libs/*.jar app.jar
 
