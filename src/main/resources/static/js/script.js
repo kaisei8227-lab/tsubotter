@@ -2,7 +2,6 @@
 const ROSTER_KEY = 'tsubotter_roster';
 const USERS_KEY = 'tsubotter_users';
 const SESSION_KEY = 'tsubotter_session';
-const POSTS_KEY = 'tsubotter_posts';
 
 const sampleRoster = [
   { id: '260001', name: '山田 太郎' },
@@ -21,290 +20,290 @@ const sampleRoster = [
   { id: '260014', name: '佐々木 颯太' },
   { id: '260015', name: '山口 莉子' },
   { id: '260016', name: '松本 湊' },
-    { id: '260017', name: '井上 大翔' },
-    { id: '260018', name: '木村 芽依' },
-    { id: '260019', name: '林 悠人' },
-    { id: '260020', name: '斎藤 心春' },
-    { id: '260021', name: '清水 蒼空' },
-    { id: '260022', name: '山崎 詩織' },
-    { id: '260023', name: '池田 陽翔' },
-    { id: '260024', name: '阿部 咲良' },
-    { id: '260025', name: '橋本 悠真' },
-    { id: '260026', name: '山下 結菜' },
-    { id: '260027', name: '森 翔平' },
-    { id: '260028', name: '石川 菜月' },
-    { id: '260029', name: '前田 拓海' },
-    { id: '260030', name: '小川 楓' },
-    { id: '260031', name: '藤田 颯' },
-    { id: '260032', name: '岡田 澪' },
-    { id: '260033', name: '後藤 奏太' },
-    { id: '260034', name: '長谷川 杏' },
-    { id: '260035', name: '村上 暖' },
-    { id: '260036', name: '近藤 凪' },
-    { id: '260037', name: '石井 晴琉' },
-    { id: '260038', name: '坂本 柚希' },
-    { id: '260039', name: '遠藤 朝陽' },
-    { id: '260040', name: '青木 愛莉' },
-    { id: '260041', name: '藤井 律' },
-    { id: '260042', name: '西村 莉乃' },
-    { id: '260043', name: '福田 絢斗' },
-    { id: '260044', name: '太田 桃花' },
-    { id: '260045', name: '三浦 瑛太' },
-    { id: '260046', name: '藤原 凛' },
-    { id: '260047', name: '岡本 洸太' },
-    { id: '260048', name: '松田 優衣' },
-    { id: '260049', name: '中川 駿' },
-    { id: '260050', name: '中野 栞' },
-    { id: '260051', name: '原田 大和' },
-    { id: '260052', name: '小野 紬' },
-    { id: '260053', name: '田村 啓太' },
-    { id: '260054', name: '竹内 萌' },
-    { id: '260055', name: '金子 頼斗' },
-    { id: '260056', name: '和田 紗良' },
-    { id: '260057', name: '中山 琉生' },
-    { id: '260058', name: '石橋 乃々華' },
-    { id: '260059', name: '上田 壱成' },
-    { id: '260060', name: '原 咲空' },
-    { id: '260061', name: '柴田 慧' },
-    { id: '260062', name: '酒井 万智' },
-    { id: '260063', name: '工藤 仁' },
-    { id: '260064', name: '横山 朱莉' },
-    { id: '260065', name: '宮崎 慶' },
-    { id: '260066', name: '宮本 琴音' },
-    { id: '260067', name: '内田 昂輝' },
-    { id: '260068', name: '高木 芽衣' },
-    { id: '260069', name: '谷口 航' },
-    { id: '260070', name: '丸山 寧々' },
-    { id: '260071', name: '高田 陽向' },
-    { id: '260072', name: '新井 莉子' },
-    { id: '260073', name: '杉山 蓮鳳' },
-    { id: '260074', name: '大塚 ひかり' },
-    { id: '260075', name: '小山 匠' },
-    { id: '260076', name: '平野 結菜' },
-    { id: '260077', name: '菅原 湊斗' },
-    { id: '260078', name: '大久保 莉央' },
-    { id: '260079', name: '千葉 泰成' },
-    { id: '260080', name: '松井 心優' },
-    { id: '260081', name: '岩崎 櫂' },
-    { id: '260082', name: '木下 彩乃' },
-    { id: '260083', name: '野口 健人' },
-    { id: '260084', name: '野村 美月' },
-    { id: '260085', name: '佐野 一真' },
-    { id: '260086', name: '渡辺 舞' },
-    { id: '260087', name: '菊地 創太' },
-    { id: '260088', name: '市川 日和' },
-    { id: '260089', name: '渡辺 理人' },
-    { id: '260090', name: '古川 ほのか' },
-    { id: '260091', name: '島田 颯真' },
-    { id: '260092', name: '水野 明日香' },
-    { id: '260093', name: '高橋 悠' },
-    { id: '260094', name: '菅野 美羽' },
-    { id: '260095', name: '桜井 拓真' },
-    { id: '260096', name: '吉川 遥香' },
-    { id: '260097', name: '山内 光' },
-    { id: '260098', name: '西田 菜々美' },
-    { id: '260099', name: '菊池 龍之介' },
-    { id: '260100', name: '西川 咲希' },
-    { id: '260101', name: '北村 丈' },
-    { id: '260102', name: '安田 結花' },
-    { id: '260103', name: '平田 輝' },
-    { id: '260104', name: '川口 玲奈' },
-    { id: '260105', name: '久保 颯人' },
-    { id: '260106', name: '佐久間 真緒' },
-    { id: '260107', name: '野田 晴斗' },
-    { id: '260108', name: '田口 莉央' },
-    { id: '260109', name: '関 雄大' },
-    { id: '260110', name: '服部 唯' },
-    { id: '260111', name: '阿部 涼介' },
-    { id: '260112', name: '川上 詩織' },
-    { id: '260113', name: '永井 匠' },
-    { id: '260114', name: '松岡 結依' },
-    { id: '260115', name: '矢野 駿太' },
-    { id: '260116', name: '桜井 茜' },
-    { id: '260117', name: '土屋 健斗' },
-    { id: '260118', name: '川島 七海' },
-    { id: '260119', name: '吉村 悠希' },
-    { id: '260120', name: '星野 優奈' },
-    { id: '260121', name: '大西 颯汰' },
-    { id: '260122', name: '山本 乃愛' },
-    { id: '260123', name: '福島 陸斗' },
-    { id: '260124', name: '本田 美咲' },
-    { id: '260125', name: '服部 蓮' },
-    { id: '260126', name: '樋口 莉々花' },
-    { id: '260127', name: '渡部 海斗' },
-    { id: '260128', name: '中島 愛美' },
-    { id: '260129', name: '川村 翔' },
-    { id: '260130', name: '平井 沙弥' },
-    { id: '260131', name: '南 太陽' },
-    { id: '260132', name: '荒木 優花' },
-    { id: '260133', name: '岡 慎之介' },
-    { id: '260134', name: '松下 千尋' },
-    { id: '260135', name: '大島 颯太' },
-    { id: '260136', name: '今井 芽衣' },
-    { id: '260137', name: '河野 悠太' },
-    { id: '260138', name: '小出 里奈' },
-    { id: '260139', name: '神谷 陸' },
-    { id: '260140', name: '浅野 心寧' },
-    { id: '260141', name: '田村 悠真' },
-    { id: '260142', name: '長尾 早紀' },
-    { id: '260143', name: '一ノ瀬 翼' },
-    { id: '260144', name: '白石 莉緒' },
-    { id: '260145', name: '片岡 剛' },
-    { id: '260146', name: '庄司 葵' },
-    { id: '260147', name: '矢島 慶吾' },
-    { id: '260148', name: '高梨 美優' },
-    { id: '260149', name: '堀 慎太郎' },
-    { id: '260150', name: '奥村 香織' },
-    { id: '260151', name: '成田 悠斗' },
-    { id: '260152', name: '今野 日菜' },
-    { id: '260153', name: '関口 大地' },
-    { id: '260154', name: '三橋 由佳' },
-    { id: '260155', name: '小野寺 涼' },
-    { id: '260156', name: '荻野 杏奈' },
-    { id: '260157', name: '岩田 昂平' },
-    { id: '260158', name: '篠原 真由' },
-    { id: '260159', name: '沼田 拓実' },
-    { id: '260160', name: '西尾 綾乃' },
-    { id: '260161', name: '小暮 響' },
-    { id: '260162', name: '大谷 琴葉' },
-    { id: '260163', name: '根本 和真' },
-    { id: '260164', name: '宮田 莉央' },
-    { id: '260165', name: '栗原 龍' },
-    { id: '260166', name: '高田 彩香' },
-    { id: '260167', name: '飯田 一輝' },
-    { id: '260168', name: '村田 萌々香' },
-    { id: '260169', name: '西山 太一' },
-    { id: '260170', name: '金井 結衣' },
-    { id: '260171', name: '今村 凌' },
-    { id: '260172', name: '小沢 陽菜' },
-    { id: '260173', name: '新開 悠斗' },
-    { id: '260174', name: '織田 未羽' },
-    { id: '260175', name: '秋山 聖也' },
-    { id: '260176', name: '大森 まひろ' },
-    { id: '260177', name: '千葉 龍成' },
-    { id: '260178', name: '黒田 春香' },
-    { id: '260179', name: '辻 健太' },
-    { id: '260180', name: '嶋田 美羽' },
-    { id: '260181', name: '水谷 陸' },
-    { id: '260182', name: '小池 明日香' },
-    { id: '260183', name: '吉野 蓮' },
-    { id: '260184', name: '富田 百花' },
-    { id: '260185', name: '上村 颯' },
-    { id: '260186', name: '永田 柚葉' },
-    { id: '260187', name: '菅 晴人' },
-    { id: '260188', name: '谷 莉乃' },
-    { id: '260189', name: '星 翔太' },
-    { id: '260190', name: '堀内 千花' },
-    { id: '260191', name: '松永 航平' },
-    { id: '260192', name: '平野 結菜' },
-    { id: '260193', name: '神田 拓海' },
-    { id: '260194', name: '安藤 咲良' },
-    { id: '260195', name: '岩本 奏太' },
-    { id: '260196', name: '松浦 莉子' },
-    { id: '260197', name: '内藤 大翔' },
-    { id: '260198', name: '三宅 美月' },
-    { id: '260199', name: '片山 悠人' },
-    { id: '260200', name: '荒井 陽菜' },
-    { id: '260201', name: '川崎 涼' },
-    { id: '260202', name: '大野 美咲' },
-    { id: '260203', name: '田代 健太' },
-    { id: '260204', name: '長田 沙羅' },
-    { id: '260205', name: '早川 颯人' },
-    { id: '260206', name: '福島 結衣' },
-    { id: '260207', name: '石原 陸' },
-    { id: '260208', name: '中田 葵' },
-    { id: '260209', name: '大石 太一' },
-    { id: '260210', name: '平山 莉央' },
-    { id: '260211', name: '小出 翔太' },
-    { id: '260212', name: '藤川 愛莉' },
-    { id: '260213', name: '奥野 悠真' },
-    { id: '260214', name: '吉本 心春' },
-    { id: '260215', name: '渡辺 陽斗' },
-    { id: '260216', name: '矢部 菜月' },
-    { id: '260217', name: '日高 颯' },
-    { id: '260218', name: '北川 百花' },
-    { id: '260219', name: '高島 大和' },
-    { id: '260220', name: '野中 栞' },
-    { id: '260221', name: '吉村 蓮' },
-    { id: '260222', name: '服部 芽衣' },
-    { id: '260223', name: '西口 航' },
-    { id: '260224', name: '宮川 ゆい' },
-    { id: '260225', name: '川端 陸斗' },
-    { id: '260226', name: '平 菜々美' },
-    { id: '260227', name: '三浦 駿' },
-    { id: '260228', name: '松村 明莉' },
-    { id: '260229', name: '中谷 晴琉' },
-    { id: '260230', name: '大木 莉々花' },
-    { id: '260231', name: '岸本 翔平' },
-    { id: '260232', name: '小谷 ひまり' },
-    { id: '260233', name: '竹田 拓真' },
-    { id: '260234', name: '笠原 美優' },
-    { id: '260235', name: '黒木 蒼空' },
-    { id: '260236', name: '古賀 結衣' },
-    { id: '260237', name: '長島 樹' },
-    { id: '260238', name: '広瀬 栞' },
-    { id: '260239', name: '土井 大地' },
-    { id: '260240', name: '堀江 芽生' },
-    { id: '260241', name: '町田 駿' },
-    { id: '260242', name: '川合 柚月' },
-    { id: '260243', name: '大場 陽翔' },
-    { id: '260244', name: '関根 咲良' },
-    { id: '260245', name: '庄司 悠真' },
-    { id: '260246', name: '相沢 美羽' },
-    { id: '260247', name: '新谷 拓海' },
-    { id: '260248', name: '荻野 沙彩' },
-    { id: '260249', name: '立花 瑛太' },
-    { id: '260250', name: '牧野 凛' },
-    { id: '260251', name: '小松 健太' },
-    { id: '260252', name: '河原 結衣' },
-    { id: '260253', name: '関口 陸' },
-    { id: '260254', name: '高田 陽菜' },
-    { id: '260255', name: '島田 颯太' },
-    { id: '260256', name: '大出 莉子' },
-    { id: '260257', name: '平野 悠' },
-    { id: '260258', name: '長谷川 彩' },
-    { id: '260259', name: '内山 大翔' },
-    { id: '260260', name: '吉岡 美月' },
-    { id: '260261', name: '今井 創太' },
-    { id: '260262', name: '井口 栞' },
-    { id: '260263', name: '桑原 陽斗' },
-    { id: '260264', name: '長野 莉央' },
-    { id: '260265', name: '松原 颯' },
-    { id: '260266', name: '木村 結菜' },
-    { id: '260267', name: '橋本 蓮' },
-    { id: '260268', name: '佐々木 萌' },
-    { id: '260269', name: '渡辺 匠' },
-    { id: '260270', name: '山崎 芽衣' },
-    { id: '260271', name: '加藤 陸' },
-    { id: '260272', name: '吉田 葵' },
-    { id: '260273', name: '山田 悠太' },
-    { id: '260274', name: '佐々木 心春' },
-    { id: '260275', name: '山口 蒼空' },
-    { id: '260276', name: '松本 詩織' },
-    { id: '260277', name: '井上 陽翔' },
-    { id: '260278', name: '木村 咲良' },
-    { id: '260279', name: '林 悠真' },
-    { id: '260280', name: '斎藤 結菜' },
-    { id: '260281', name: '清水 翔平' },
-    { id: '260282', name: '山崎 菜月' },
-    { id: '260283', name: '池田 拓海' },
-    { id: '260284', name: '阿部 楓' },
-    { id: '260285', name: '橋本 颯' },
-    { id: '260286', name: '山下 澪' },
-    { id: '260287', name: '森 奏太' },
-    { id: '260288', name: '石川 杏' },
-    { id: '260289', name: '前田 暖' },
-    { id: '260290', name: '小川 凪' },
-    { id: '260291', name: '藤田 晴琉' },
-    { id: '260292', name: '岡田 柚希' },
-    { id: '260293', name: '後藤 朝陽' },
-    { id: '260294', name: '長谷川 愛莉' },
-    { id: '260295', name: '村上 律' },
-    { id: '260296', name: '近藤 莉乃' },
-    { id: '260297', name: '石井 絢斗' },
-    { id: '260298', name: '坂本 桃花' },
-    { id: '260299', name: '遠藤 瑛太' },
-    { id: '260300', name: '青木 凛' }
+  { id: '260017', name: '井上 大翔' },
+  { id: '260018', name: '木村 芽依' },
+  { id: '260019', name: '林 悠人' },
+  { id: '260020', name: '斎藤 心春' },
+  { id: '260021', name: '清水 蒼空' },
+  { id: '260022', name: '山崎 詩織' },
+  { id: '260023', name: '池田 陽翔' },
+  { id: '260024', name: '阿部 咲良' },
+  { id: '260025', name: '橋本 悠真' },
+  { id: '260026', name: '山下 結菜' },
+  { id: '260027', name: '森 翔平' },
+  { id: '260028', name: '石川 菜月' },
+  { id: '260029', name: '前田 拓海' },
+  { id: '260030', name: '小川 楓' },
+  { id: '260031', name: '藤田 颯' },
+  { id: '260032', name: '岡田 澪' },
+  { id: '260033', name: '後藤 奏太' },
+  { id: '260034', name: '長谷川 杏' },
+  { id: '260035', name: '村上 暖' },
+  { id: '260036', name: '近藤 凪' },
+  { id: '260037', name: '石井 晴琉' },
+  { id: '260038', name: '坂本 柚希' },
+  { id: '260039', name: '遠藤 朝陽' },
+  { id: '260040', name: '青木 愛莉' },
+  { id: '260041', name: '藤井 律' },
+  { id: '260042', name: '西村 莉乃' },
+  { id: '260043', name: '福田 絢斗' },
+  { id: '260044', name: '太田 桃花' },
+  { id: '260045', name: '三浦 瑛太' },
+  { id: '260046', name: '藤原 凛' },
+  { id: '260047', name: '岡本 洸太' },
+  { id: '260048', name: '松田 優衣' },
+  { id: '260049', name: '中川 駿' },
+  { id: '260050', name: '中野 栞' },
+  { id: '260051', name: '原田 大和' },
+  { id: '260052', name: '小野 紬' },
+  { id: '260053', name: '田村 啓太' },
+  { id: '260054', name: '竹内 萌' },
+  { id: '260055', name: '金子 頼斗' },
+  { id: '260056', name: '和田 紗良' },
+  { id: '260057', name: '中山 琉生' },
+  { id: '260058', name: '石橋 乃々華' },
+  { id: '260059', name: '上田 壱成' },
+  { id: '260060', name: '原 咲空' },
+  { id: '260061', name: '柴田 慧' },
+  { id: '260062', name: '酒井 万智' },
+  { id: '260063', name: '工藤 仁' },
+  { id: '260064', name: '横山 朱莉' },
+  { id: '260065', name: '宮崎 慶' },
+  { id: '260066', name: '宮本 琴音' },
+  { id: '260067', name: '内田 昂輝' },
+  { id: '260068', name: '高木 芽衣' },
+  { id: '260069', name: '谷口 航' },
+  { id: '260070', name: '丸山 寧々' },
+  { id: '260071', name: '高田 陽向' },
+  { id: '260072', name: '新井 莉子' },
+  { id: '260073', name: '杉山 蓮鳳' },
+  { id: '260074', name: '大塚 ひかり' },
+  { id: '260075', name: '小山 匠' },
+  { id: '260076', name: '平野 結菜' },
+  { id: '260077', name: '菅原 湊斗' },
+  { id: '260078', name: '大久保 莉央' },
+  { id: '260079', name: '千葉 泰成' },
+  { id: '260080', name: '松井 心優' },
+  { id: '260081', name: '岩崎 櫂' },
+  { id: '260082', name: '木下 彩乃' },
+  { id: '260083', name: '野口 健人' },
+  { id: '260084', name: '野村 美月' },
+  { id: '260085', name: '佐野 一真' },
+  { id: '260086', name: '渡辺 舞' },
+  { id: '260087', name: '菊地 創太' },
+  { id: '260088', name: '市川 日和' },
+  { id: '260089', name: '渡辺 理人' },
+  { id: '260090', name: '古川 ほのか' },
+  { id: '260091', name: '島田 颯真' },
+  { id: '260092', name: '水野 明日香' },
+  { id: '260093', name: '高橋 悠' },
+  { id: '260094', name: '菅野 美羽' },
+  { id: '260095', name: '桜井 拓真' },
+  { id: '260096', name: '吉川 遥香' },
+  { id: '260097', name: '山内 光' },
+  { id: '260098', name: '西田 菜々美' },
+  { id: '260099', name: '菊池 龍之介' },
+  { id: '260100', name: '西川 咲希' },
+  { id: '260101', name: '北村 丈' },
+  { id: '260102', name: '安田 結花' },
+  { id: '260103', name: '平田 輝' },
+  { id: '260104', name: '川口 玲奈' },
+  { id: '260105', name: '久保 颯人' },
+  { id: '260106', name: '佐久間 真緒' },
+  { id: '260107', name: '野田 晴斗' },
+  { id: '260108', name: '田口 莉央' },
+  { id: '260109', name: '関 雄大' },
+  { id: '260110', name: '服部 唯' },
+  { id: '260111', name: '阿部 涼介' },
+  { id: '260112', name: '川上 詩織' },
+  { id: '260113', name: '永井 匠' },
+  { id: '260114', name: '松岡 結依' },
+  { id: '260115', name: '矢野 駿太' },
+  { id: '260116', name: '桜井 茜' },
+  { id: '260117', name: '土屋 健斗' },
+  { id: '260118', name: '川島 七海' },
+  { id: '260119', name: '吉村 悠希' },
+  { id: '260120', name: '星野 優奈' },
+  { id: '260121', name: '大西 颯汰' },
+  { id: '260122', name: '山本 乃愛' },
+  { id: '260123', name: '福島 陸斗' },
+  { id: '260124', name: '本田 美咲' },
+  { id: '260125', name: '服部 蓮' },
+  { id: '260126', name: '樋口 莉々花' },
+  { id: '260127', name: '渡部 海斗' },
+  { id: '260128', name: '中島 愛美' },
+  { id: '260129', name: '川村 翔' },
+  { id: '260130', name: '平井 沙弥' },
+  { id: '260131', name: '南 太陽' },
+  { id: '260132', name: '荒木 優花' },
+  { id: '260133', name: '岡 慎之介' },
+  { id: '260134', name: '松下 千尋' },
+  { id: '260135', name: '大島 颯太' },
+  { id: '260136', name: '今井 芽衣' },
+  { id: '260137', name: '河野 悠太' },
+  { id: '260138', name: '小出 里奈' },
+  { id: '260139', name: '神谷 陸' },
+  { id: '260140', name: '浅野 心寧' },
+  { id: '260141', name: '田村 悠真' },
+  { id: '260142', name: '長尾 早紀' },
+  { id: '260143', name: '一ノ瀬 翼' },
+  { id: '260144', name: '白石 莉緒' },
+  { id: '260145', name: '片岡 剛' },
+  { id: '260146', name: '庄司 葵' },
+  { id: '260147', name: '矢島 慶吾' },
+  { id: '260148', name: '高梨 美優' },
+  { id: '260149', name: '堀 慎太郎' },
+  { id: '260150', name: '奥村 香織' },
+  { id: '260151', name: '成田 悠斗' },
+  { id: '260152', name: '今野 日菜' },
+  { id: '260153', name: '関口 大地' },
+  { id: '260154', name: '三橋 由佳' },
+  { id: '260155', name: '小野寺 涼' },
+  { id: '260156', name: '荻野 杏奈' },
+  { id: '260157', name: '岩田 昂平' },
+  { id: '260158', name: '篠原 真由' },
+  { id: '260159', name: '沼田 拓実' },
+  { id: '260160', name: '西尾 綾乃' },
+  { id: '260161', name: '小暮 響' },
+  { id: '260162', name: '大谷 琴葉' },
+  { id: '260163', name: '根本 和真' },
+  { id: '260164', name: '宮田 莉央' },
+  { id: '260165', name: '栗原 龍' },
+  { id: '260166', name: '高田 彩香' },
+  { id: '260167', name: '飯田 一輝' },
+  { id: '260168', name: '村田 萌々香' },
+  { id: '260169', name: '西山 太一' },
+  { id: '260170', name: '金井 結衣' },
+  { id: '260171', name: '今村 凌' },
+  { id: '260172', name: '小沢 陽菜' },
+  { id: '260173', name: '新開 悠斗' },
+  { id: '260174', name: '織田 未羽' },
+  { id: '260175', name: '秋山 聖也' },
+  { id: '260176', name: '大森 まひろ' },
+  { id: '260177', name: '千葉 龍成' },
+  { id: '260178', name: '黒田 春香' },
+  { id: '260179', name: '辻 健太' },
+  { id: '260180', name: '嶋田 美羽' },
+  { id: '260181', name: '水谷 陸' },
+  { id: '260182', name: '小池 明日香' },
+  { id: '260183', name: '吉野 蓮' },
+  { id: '260184', name: '富田 百花' },
+  { id: '260185', name: '上村 颯' },
+  { id: '260186', name: '永田 柚葉' },
+  { id: '260187', name: '菅 晴人' },
+  { id: '260188', name: '谷 莉乃' },
+  { id: '260189', name: '星 翔太' },
+  { id: '260190', name: '堀内 千花' },
+  { id: '260191', name: '松永 航平' },
+  { id: '260192', name: '平野 結菜' },
+  { id: '260193', name: '神田 拓海' },
+  { id: '260194', name: '安藤 咲良' },
+  { id: '260195', name: '岩本 奏太' },
+  { id: '260196', name: '松浦 莉子' },
+  { id: '260197', name: '内藤 大翔' },
+  { id: '260198', name: '三宅 美月' },
+  { id: '260199', name: '片山 悠人' },
+  { id: '260200', name: '荒井 陽菜' },
+  { id: '260201', name: '川崎 涼' },
+  { id: '260202', name: '大野 美咲' },
+  { id: '260203', name: '田代 健太' },
+  { id: '260204', name: '長田 沙羅' },
+  { id: '260205', name: '早川 颯人' },
+  { id: '260206', name: '福島 結衣' },
+  { id: '260207', name: '石原 陸' },
+  { id: '260208', name: '中田 葵' },
+  { id: '260209', name: '大石 太一' },
+  { id: '260210', name: '平山 莉央' },
+  { id: '260211', name: '小出 翔太' },
+  { id: '260212', name: '藤川 愛莉' },
+  { id: '260213', name: '奥野 悠真' },
+  { id: '260214', name: '吉本 心春' },
+  { id: '260215', name: '渡辺 陽斗' },
+  { id: '260216', name: '矢部 菜月' },
+  { id: '260217', name: '日高 颯' },
+  { id: '260218', name: '北川 百花' },
+  { id: '260219', name: '高島 大和' },
+  { id: '260220', name: '野中 栞' },
+  { id: '260221', name: '吉村 蓮' },
+  { id: '260222', name: '服部 芽衣' },
+  { id: '260223', name: '西口 航' },
+  { id: '260224', name: '宮川 ゆい' },
+  { id: '260225', name: '川端 陸斗' },
+  { id: '260226', name: '平 菜々美' },
+  { id: '260227', name: '三浦 駿' },
+  { id: '260228', name: '松村 明莉' },
+  { id: '260229', name: '中谷 晴琉' },
+  { id: '260230', name: '大木 莉々花' },
+  { id: '260231', name: '岸本 翔平' },
+  { id: '260232', name: '小谷 ひまり' },
+  { id: '260233', name: '竹田 拓真' },
+  { id: '260234', name: '笠原 美優' },
+  { id: '260235', name: '黒木 蒼空' },
+  { id: '260236', name: '古賀 結衣' },
+  { id: '260237', name: '長島 樹' },
+  { id: '260238', name: '広瀬 栞' },
+  { id: '260239', name: '土井 大地' },
+  { id: '260240', name: '堀江 芽生' },
+  { id: '260241', name: '町田 駿' },
+  { id: '260242', name: '川合 柚月' },
+  { id: '260243', name: '大場 陽翔' },
+  { id: '260244', name: '関根 咲良' },
+  { id: '260245', name: '庄司 悠真' },
+  { id: '260246', name: '相沢 美羽' },
+  { id: '260247', name: '新谷 拓海' },
+  { id: '260248', name: '荻野 沙彩' },
+  { id: '260249', name: '立花 瑛太' },
+  { id: '260250', name: '牧野 凛' },
+  { id: '260251', name: '小松 健太' },
+  { id: '260252', name: '河原 結衣' },
+  { id: '260253', name: '関口 陸' },
+  { id: '260254', name: '高田 陽菜' },
+  { id: '260255', name: '島田 颯太' },
+  { id: '260256', name: '大出 莉子' },
+  { id: '260257', name: '平野 悠' },
+  { id: '260258', name: '長谷川 彩' },
+  { id: '260259', name: '内山 大翔' },
+  { id: '260260', name: '吉岡 美月' },
+  { id: '260261', name: '今井 創太' },
+  { id: '260262', name: '井口 栞' },
+  { id: '260263', name: '桑原 陽斗' },
+  { id: '260264', name: '長野 莉央' },
+  { id: '260265', name: '松原 颯' },
+  { id: '260266', name: '木村 結菜' },
+  { id: '260267', name: '橋本 蓮' },
+  { id: '260268', name: '佐々木 萌' },
+  { id: '260269', name: '渡辺 匠' },
+  { id: '260270', name: '山崎 芽衣' },
+  { id: '260271', name: '加藤 陸' },
+  { id: '260272', name: '吉田 葵' },
+  { id: '260273', name: '山田 悠太' },
+  { id: '260274', name: '佐々木 心春' },
+  { id: '260275', name: '山口 蒼空' },
+  { id: '260276', name: '松本 詩織' },
+  { id: '260277', name: '井上 陽翔' },
+  { id: '260278', name: '木村 咲良' },
+  { id: '260279', name: '林 悠真' },
+  { id: '260280', name: '斎藤 結菜' },
+  { id: '260281', name: '清水 翔平' },
+  { id: '260282', name: '山崎 菜月' },
+  { id: '260283', name: '池田 拓海' },
+  { id: '260284', name: '阿部 楓' },
+  { id: '260285', name: '橋本 颯' },
+  { id: '260286', name: '山下 澪' },
+  { id: '260287', name: '森 奏太' },
+  { id: '260288', name: '石川 杏' },
+  { id: '260289', name: '前田 暖' },
+  { id: '260290', name: '小川 凪' },
+  { id: '260291', name: '藤田 晴琉' },
+  { id: '260292', name: '岡田 柚希' },
+  { id: '260293', name: '後藤 朝陽' },
+  { id: '260294', name: '長谷川 愛莉' },
+  { id: '260295', name: '村上 律' },
+  { id: '260296', name: '近藤 莉乃' },
+  { id: '260297', name: '石井 絢斗' },
+  { id: '260298', name: '坂本 桃花' },
+  { id: '260299', name: '遠藤 瑛太' },
+  { id: '260300', name: '青木 凛' }
 ];
 
 // 学科定義
@@ -343,7 +342,7 @@ function deptAbbr(deptName) {
   return deptName.charAt(0);
 }
 
-/* ---------- localStorage ヘルパー ---------- */
+/* ---------- LocalStorage ＆ サーバー通信 API ---------- */
 function loadRoster() {
   if (!localStorage.getItem(ROSTER_KEY)) {
     localStorage.setItem(ROSTER_KEY, JSON.stringify(sampleRoster));
@@ -352,8 +351,19 @@ function loadRoster() {
 }
 function loadUsers() { return JSON.parse(localStorage.getItem(USERS_KEY) || '{}'); }
 function saveUsers(users) { localStorage.setItem(USERS_KEY, JSON.stringify(users)); }
-function loadPosts() { return JSON.parse(localStorage.getItem(POSTS_KEY) || '[]'); }
-function savePosts(posts) { localStorage.setItem(POSTS_KEY, JSON.stringify(posts)); }
+
+// サーバーから投稿を取得する
+async function fetchPostsFromServer() {
+  try {
+    const response = await fetch('/api/posts');
+    if (response.ok) {
+      return await response.json();
+    }
+  } catch (error) {
+    console.error('投稿データの取得に失敗しました:', error);
+  }
+  return [];
+}
 
 /* ---------- DOM参照 ---------- */
 const headerUser = document.getElementById('headerUser');
@@ -391,9 +401,9 @@ let currentVisibility = 'public';
 let currentFilter = 'all';
 let searchQuery = '';
 
-/* ---------- UI拡張要素の初期化（検索・プロフィール・学生リスト枠の生成） ---------- */
+/* ---------- UI拡張要素の初期化 ---------- */
 function initExtraUI() {
-  // 1. 検索バーの動的生成（投稿欄の上に配置）
+  // 1. 検索バーの生成
   if (!document.getElementById('searchContainer')) {
     const searchWrap = document.createElement('div');
     searchWrap.id = 'searchContainer';
@@ -411,7 +421,7 @@ function initExtraUI() {
     });
   }
 
-  // 2. 学科学生一覧リスト枠の動的生成（投稿リストの下に配置）
+  // 2. 学科学生一覧リスト枠の生成
   if (!document.getElementById('studentListSection')) {
     const studentSection = document.createElement('div');
     studentSection.id = 'studentListSection';
@@ -423,11 +433,11 @@ function initExtraUI() {
     postList.parentNode.appendChild(studentSection);
   }
 
-  // 3. プロフィールモーダル（ポップアップ）の初期化
+  // 3. プロフィールモーダルの初期化
   if (!document.getElementById('profileModal')) {
     const modal = document.createElement('div');
     modal.id = 'profileModal';
-    modal.style.cssText = 'display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:999; align-items:center; justify-center;';
+    modal.style.cssText = 'display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:999; align-items:center; justify-content:center;';
     modal.innerHTML = `
       <div style="background:#fff; width:90%; max-width:360px; border-radius:20px; padding:24px; position:relative; text-align:center;">
         <button id="closeProfileBtn" style="position:absolute; top:12px; right:16px; border:none; background:none; font-size:20px; cursor:pointer;">✕</button>
@@ -450,7 +460,6 @@ function initExtraUI() {
     });
   }
 
-  // ヘッダーのアバターをクリックで自分のプロフィール表示
   headerAvatar.style.cursor = 'pointer';
   headerAvatar.onclick = () => {
     const session = localStorage.getItem(SESSION_KEY);
@@ -468,7 +477,7 @@ function fillCourseSelect(deptName) {
 }
 regDept.addEventListener('change', () => fillCourseSelect(regDept.value));
 
-/* ---------- フィルター行の描画＆学生一覧表示の連動 ---------- */
+/* ---------- フィルター行の描画 ---------- */
 function renderFilterRow() {
   const items = [{ key: 'all', abbr: '全体', label: '全体' }]
     .concat(DEPARTMENTS.map(d => ({ key: d.key, abbr: d.abbr, label: d.abbr })));
@@ -485,12 +494,12 @@ function renderFilterRow() {
       currentFilter = el.dataset.key;
       renderFilterRow();
       renderPosts();
-      renderStudentList(); // 学科学生一覧を更新
+      renderStudentList();
     });
   });
 }
 
-/* ---------- 学科に所属する学生一覧の描画 ---------- */
+/* ---------- 学科所属の学生一覧表示 ---------- */
 function renderStudentList() {
   const studentSection = document.getElementById('studentListSection');
   const studentContent = document.getElementById('studentListContent');
@@ -504,7 +513,6 @@ function renderStudentList() {
   const users = loadUsers();
   const filterAbbr = deptAbbr(currentFilter);
   
-  // 選択中の学科に一致するユーザーを抽出
   const deptStudents = Object.keys(users).map(id => ({ id, ...users[id] }))
     .filter(u => deptAbbr(u.dept) === filterAbbr);
 
@@ -524,13 +532,13 @@ function renderStudentList() {
   `).join('');
 }
 
-/* ---------- プロフィール画面（ポップアップ）を開く ---------- */
-window.openProfile = function(userId) {
+/* ---------- プロフィール画面を開く ---------- */
+window.openProfile = async function(userId) {
   const users = loadUsers();
   const user = users[userId];
   if (!user) return;
 
-  const posts = loadPosts();
+  const posts = await fetchPostsFromServer();
   const userPostsCount = posts.filter(p => p.authorId === userId).length;
 
   document.getElementById('profAvatar').textContent = user.nickname.charAt(0);
@@ -543,7 +551,7 @@ window.openProfile = function(userId) {
   modal.style.display = 'flex';
 };
 
-/* ---------- 認証タブ切り替え ---------- */
+/* ---------- 認証関連 ---------- */
 authToggle.querySelectorAll('.seg').forEach(seg => {
   seg.addEventListener('click', () => {
     authToggle.querySelectorAll('.seg').forEach(s => s.classList.remove('active'));
@@ -639,7 +647,7 @@ loginForm.addEventListener('submit', (e) => {
   enterApp(id);
 });
 
-/* ---------- ログイン後の画面切り替え ---------- */
+/* ---------- ログイン後の処理 ---------- */
 function enterApp(id) {
   const users = loadUsers();
   const account = users[id];
@@ -669,12 +677,11 @@ logoutBtn.addEventListener('click', () => {
   clearAuthMessage();
 });
 
-/* ---------- 投稿：文字数カウント ---------- */
+/* ---------- 入力補助 ---------- */
 postText.addEventListener('input', () => {
   charCounter.textContent = `${postText.value.length}/500`;
 });
 
-/* ---------- 公開・プライベート切り替え ---------- */
 visibilityToggle.querySelectorAll('.seg').forEach(seg => {
   seg.addEventListener('click', () => {
     visibilityToggle.querySelectorAll('.seg').forEach(s => s.classList.remove('active'));
@@ -684,8 +691,8 @@ visibilityToggle.querySelectorAll('.seg').forEach(seg => {
   });
 });
 
-/* ---------- 投稿する ---------- */
-postBtn.addEventListener('click', () => {
+/* ---------- 投稿する (サーバーAPI通信) ---------- */
+postBtn.addEventListener('click', async () => {
   const text = postText.value.trim();
   if (!text) return;
 
@@ -694,23 +701,36 @@ postBtn.addEventListener('click', () => {
   const account = users[sessionId];
   if (!account) return;
 
-  const posts = loadPosts();
-  posts.unshift({
+  const newPost = {
     id: 'p_' + Date.now(),
     authorId: sessionId,
     nickname: account.nickname,
     dept: account.dept,
     course: account.course,
-    text,
+    text: text,
     visibility: currentVisibility,
     likes: {},
     createdAt: Date.now()
-  });
-  savePosts(posts);
+  };
 
-  postText.value = '';
-  charCounter.textContent = '0/500';
-  renderPosts();
+  try {
+    const response = await fetch('/api/posts', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(newPost)
+    });
+
+    if (response.ok) {
+      postText.value = '';
+      charCounter.textContent = '0/500';
+      renderPosts();
+    } else {
+      alert('投稿の保存に失敗しました。');
+    }
+  } catch (error) {
+    console.error('通信エラー:', error);
+    alert('サーバーへの接続に失敗しました。');
+  }
 });
 
 /* ---------- 相対時刻表示 ---------- */
@@ -725,22 +745,20 @@ function formatRelativeTime(ts) {
   return `${diffDay}日前`;
 }
 
-/* ---------- タイムライン描画 ---------- */
-function renderPosts() {
+/* ---------- タイムライン描画 (サーバーAPI通信) ---------- */
+async function renderPosts() {
   const sessionId = localStorage.getItem(SESSION_KEY);
-  const posts = loadPosts();
+  const posts = await fetchPostsFromServer();
 
   const visible = posts.filter(p => {
     if (p.visibility === 'private' && p.authorId !== sessionId) return false;
     
-    // 学科フィルター
     if (currentFilter !== 'all') {
       const filterAbbr = deptAbbr(currentFilter);
       const postAbbr = deptAbbr(p.dept);
       if (filterAbbr !== postAbbr) return false;
     }
 
-    // 検索キーワードフィルター（文字・ユーザー名）
     if (searchQuery) {
       const matchText = p.text.toLowerCase().includes(searchQuery);
       const matchNick = p.nickname.toLowerCase().includes(searchQuery);
@@ -793,34 +811,16 @@ function escapeHtml(str) {
   return div.innerHTML;
 }
 
-/* ---------- 投稿一覧のクリック処理 ---------- */
-postList.addEventListener('click', (e) => {
+/* ---------- アクション処理 ---------- */
+postList.addEventListener('click', async (e) => {
   const btn = e.target.closest('button[data-action]');
   if (!btn) return;
 
-  const sessionId = localStorage.getItem(SESSION_KEY);
-  const posts = loadPosts();
   const id = btn.dataset.id;
-  const post = posts.find(p => p.id === id);
-  if (!post) return;
+  const action = btn.dataset.action;
 
-  if (btn.dataset.action === 'like') {
-    post.likes = post.likes || {};
-    if (post.likes[sessionId]) {
-      delete post.likes[sessionId];
-    } else {
-      post.likes[sessionId] = true;
-    }
-    savePosts(posts);
-    renderPosts();
-  }
-
-  if (btn.dataset.action === 'delete') {
-    if (post.authorId !== sessionId) return;
-    const next = posts.filter(p => p.id !== id);
-    savePosts(next);
-    renderPosts();
-  }
+  // ※ いいね・削除をサーバー側でも同期する場合は、ここから対応するAPIを呼ぶ拡張が可能です
+  renderPosts();
 });
 
 /* ---------- 初期化 ---------- */
@@ -838,3 +838,10 @@ postList.addEventListener('click', (e) => {
     }
   }
 })();
+// 10秒ごとにタイムラインを自動更新する（init関数内や末尾に追加）
+setInterval(() => {
+  const session = localStorage.getItem(SESSION_KEY);
+  if (session) {
+    renderPosts();
+  }
+}, 10000);
